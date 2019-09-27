@@ -1,0 +1,46 @@
+document.oncontextmenu = function(evt) {evt = evt||window.event;evt.returnValue=true;}//鼠标右键 
+document.onselectstart = function(evt){evt = evt||window.event;evt.returnValue=true;}//鼠标选择
+window.onhelp = function() {return true;} //F1帮助 
+document.onmousewheel = function(evt)//Shift+滚轮,Ctrl+滚轮
+{ 
+	evt = evt||window.event;
+	if(evt.shiftKey || evt.ctrlKey)
+	{
+		evt.keyCode=0; 
+		evt.returnValue=true; 		
+	}
+}
+document.onkeydown = function(evt)
+{ 
+  evt = evt||window.event;
+  if (evt.keyCode==27){evt.keyCode=0;evt.returnValue=true;}  //ESC
+  if (evt.keyCode==114){evt.keyCode=0;evt.returnValue=true;}  //F3
+  if (evt.keyCode==116){evt.keyCode=0;evt.returnValue=true;}  //F5
+  if (evt.keyCode==122){evt.keyCode=0;evt.returnValue=true;}  //F11
+  if (evt.keyCode==123){evt.keyCode=0;evt.returnValue=true;}  //F12
+  if(evt.ctrlKey && evt.keyCode==67) {evt.keyCode=0;evt.returnValue=true;}	// Ctrl+c
+  if(evt.ctrlKey && evt.keyCode==86) {evt.keyCode=0;evt.returnValue=true;}	// Ctrl+v
+  if(evt.ctrlKey && evt.keyCode==70) {evt.keyCode=0;evt.returnValue=true;}	// Ctrl+f
+  if(evt.ctrlKey && evt.keyCode==87) {evt.keyCode=0;evt.returnValue=true;}	// Ctrl+w
+  if(evt.ctrlKey && evt.keyCode==69) {evt.keyCode=0;evt.returnValue=true;}	// Ctrl+e
+  if(evt.ctrlKey && evt.keyCode==72) {evt.keyCode=0;evt.returnValue=true;}	// Ctrl+h
+  if(evt.ctrlKey && evt.keyCode==73) {evt.keyCode=0;evt.returnValue=true;}	// Ctrl+i
+  if(evt.ctrlKey && evt.keyCode==79) {evt.keyCode=0;evt.returnValue=true;}	// Ctrl+o
+  if(evt.ctrlKey && evt.keyCode==76) {evt.keyCode=0;evt.returnValue=true;}	// Ctrl+l
+  if(evt.ctrlKey && evt.keyCode==80) {evt.keyCode=0;evt.returnValue=true;}	// Ctrl+p
+  if(evt.ctrlKey && evt.keyCode==66) {evt.keyCode=0;evt.returnValue=true;}	// Ctrl+b
+  if (evt.ctrlKey && evt.keyCode==78) {evt.keyCode=0;evt.returnValue=true;}  // Ctrl+n
+  if (evt.shiftKey && evt.keyCode==121){evt.keyCode=0;evt.returnValue=true;}  // shift+F10 
+  if (evt.srcElement.tagName == "A" && window.evt.shiftKey) {evt.keyCode=0;evt.returnValue=true;}             // shift 加鼠标左键新开一网页 
+}
+
+document.onmousedown = function(evt)
+{
+	try
+	{
+		evt = evt||window.event;
+		if(evt.button==4){evt.keyCode=0;evt.returnValue=true;}	//鼠标中键
+	}
+	catch(e)
+	{}	
+}
